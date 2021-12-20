@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e7f0b92-5495-462c-b1a4-762e73a442e0" name="Default Changelist" comment="fix delete and other small problem">
+      <change afterPath="$PROJECT_DIR$/dashboard/admin/daftar/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/admin/dokter/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/admin/poliklinik/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/user/daftar/print.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout_antrian.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout_antrian.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pendaftaranPasien.php" beforeDir="false" afterPath="$PROJECT_DIR$/pendaftaranPasien.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reg_pasienbaru.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_pasienbaru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reg_pasienlama.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_pasienlama.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ifr3mqCMsq5mzKU86LlWX7lFAQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ms4w\Apache\htdocs\registerRS\dashboard" />
+      <recent name="E:\ms4w\Apache\htdocs\registerRS" />
+      <recent name="E:\ms4w\Apache\htdocs\Appland" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e7f0b92-5495-462c-b1a4-762e73a442e0" name="Default Changelist" comment="" />
+      <created>1602309290635</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602309290635</updated>
+      <workItem from="1602309292126" duration="318000" />
+      <workItem from="1602453987111" duration="670000" />
+      <workItem from="1602455208317" duration="2288000" />
+      <workItem from="1602497374040" duration="3637000" />
+      <workItem from="1602885406682" duration="183000" />
+      <workItem from="1602885765877" duration="2706000" />
+      <workItem from="1603085249790" duration="354000" />
+      <workItem from="1603226576436" duration="31327000" />
+      <workItem from="1603388086544" duration="4064000" />
+      <workItem from="1603404309814" duration="19558000" />
+      <workItem from="1603525504171" duration="2765000" />
+      <workItem from="1603710588539" duration="34000" />
+      <workItem from="1603794712463" duration="8404000" />
+      <workItem from="1603828439222" duration="6510000" />
+      <workItem from="1603836152726" duration="14852000" />
+      <workItem from="1603863006280" duration="3062000" />
+      <workItem from="1603884247138" duration="577000" />
+      <workItem from="1604390413481" duration="9320000" />
+      <workItem from="1604711749597" duration="38000" />
+      <workItem from="1604711813509" duration="3000" />
+      <workItem from="1604978851863" duration="4479000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix old versioned php systax">
+      <created>1603526288937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603526288937</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix input type old patient">
+      <created>1603526490626</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603526490626</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding login feature">
+      <created>1603841542607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603841542607</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding login feature">
+      <created>1603841714791</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603841714791</updated>
+    </task>
+    <task id="LOCAL-00005" summary="++ admin dashboard">
+      <created>1603842899693</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603842899693</updated>
+    </task>
+    <task id="LOCAL-00006" summary="++ admin completing-patient-register feature">
+      <created>1603843050517</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603843050517</updated>
+    </task>
+    <task id="LOCAL-00007" summary="++ logout feature">
+      <created>1603845418185</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603845418185</updated>
+    </task>
+    <task id="LOCAL-00008" summary="++ add user page and fix js function location">
+      <created>1603847580336</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603847580336</updated>
+    </task>
+    <task id="LOCAL-00009" summary="++ fix location problems">
+      <created>1603847601158</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603847601158</updated>
+    </task>
+    <task id="LOCAL-00010" summary="++ fix hari pendaftaran on user dashboard page">
+      <created>1603847975677</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603847975677</updated>
+    </task>
+    <task id="LOCAL-00011" summary="++ add status antrian">
+      <created>1603848793472</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603848793472</updated>
+    </task>
+    <task id="LOCAL-00012" summary="++ fix register user in landing page">
+      <created>1603851751093</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603851751093</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix delete and other small problem">
+      <created>1603866026937</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603866026937</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix old versioned php systax" />
+    <MESSAGE value="fix input type old patient" />
+    <MESSAGE value="adding login feature" />
+    <MESSAGE value="++ admin dashboard" />
+    <MESSAGE value="++ admin completing-patient-register feature" />
+    <MESSAGE value="++ logout feature" />
+    <MESSAGE value="++ add user page and fix js function location" />
+    <MESSAGE value="++ fix location problems" />
+    <MESSAGE value="++ fix hari pendaftaran on user dashboard page" />
+    <MESSAGE value="++ add status antrian" />
+    <MESSAGE value="++ fix register user in landing page" />
+    <MESSAGE value="fix delete and other small problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix delete and other small problem" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="363" y="119" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602885447629">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="363" y="119" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1602885447629" />
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603847104163">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1603847104163" />
+    <state x="507" y="106" key="NewPhpClassDialog" timestamp="1603226609275">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="507" y="106" key="NewPhpClassDialog/0.0.1366.768@0.0.1366.768" timestamp="1603226609275" />
+    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1603865306321">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1603865306321" />
+    <state x="275" y="110" key="Vcs.Push.Dialog.v2" timestamp="1604393280846">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="110" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604393280846" />
+    <state x="275" y="116" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1603866027132" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603841887728">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1603841887728" />
+  </component>
+</project>
