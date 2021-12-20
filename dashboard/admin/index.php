@@ -130,6 +130,10 @@ include "../../connect.php";
         include "dokter/index.php";
     elseif ($p == 'tambahdokter') :
         include "dokter/tambah.php";
+    elseif ($p == 'jadwal') :
+        include "dokter/jadwal.php";
+    elseif ($p == 'tambahjadwal') :
+        include "dokter/tambahjadwal.php";
     elseif ($p == 'user') :
         include "user/index.php";
     endif;
