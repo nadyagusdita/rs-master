@@ -35,7 +35,7 @@
 
                 <li class="sidebar-item">
                     <a href="?page=jadwal" class='sidebar-link'>
-                        <i class="bi bi-person-badge"></i>
+                        <i class="bi bi-calendar"></i>
                         <span>Jadwal Dokter</span>
                     </a>
                 </li>

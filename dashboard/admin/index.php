@@ -9,17 +9,6 @@
 
 include "../../connect.php";
 
-$p = @$_GET['page'];
-if ($p == 'pendaftar') :
-    require_once 'daftar/index.php';
-elseif ($p == 'poliklinik') :
-    include "poliklinik/index.php";
-elseif ($p == 'dokter') :
-    include "dokter/index.php";
-elseif ($p == 'user') :
-    include "user/index.php";
-endif;
-
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +24,7 @@ endif;
 
     <link rel="stylesheet" href="../../template/css/bootstrap.css">
     <link rel="stylesheet" href="../../template/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="../../template/vendors/simple-datatables/style.css">
 
     <link rel="stylesheet" href="../../template/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="../../template/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -46,15 +36,11 @@ endif;
     <div id="app">
         <?php include 'sidebar.php' ?>
         <div id="main">
-            <header class="mb-3">
+            <header>
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-
-            <div class="page-heading">
-                <h3>Selamat Datang!</h3>
-            </div>
 
             <div class="page-content">
                 <section class="row">
@@ -63,10 +49,67 @@ endif;
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Website BEM KM FTI Universitas Andalas</h4>
+                                        <h4>Status</h4>
                                     </div>
                                     <div class="card-body">
-                                        <img src="../assets/logobem.png" alt="BEM KM FTI">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="c-callout c-callout-info"><small class="text-muted">Pasien</small>
+                                                    <div class="text-value-lg">
+                                                        <?php
+                                                        $result = $conn->query("SELECT COUNT(no_rm) as no_rm FROM pasien");
+                                                        if ($result->num_rows > 0) {
+                                                            while ($data = $result->fetch_object()) :
+                                                                echo $data->no_rm;
+                                                            endwhile;
+                                                        } else {
+                                                            echo "Tidak ada data pasien";
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.col-->
+                                            <div class="col-4">
+                                                <div class="c-callout c-callout-danger"><small class="text-muted">Pendaftar Hari Ini</small>
+                                                    <div class="text-value-lg">
+                                                        <?php
+                                                        $result = $conn->query("SELECT COUNT(no_antrian) as no FROM daftar WHERE year(waktu) = year(now()) AND month(waktu) = month(now()) AND day(waktu) = day(now())");
+                                                        if ($result->num_rows > 0) {
+                                                            while ($data = $result->fetch_object()) :
+                                                                if ($data->no == 0) {
+                                                                    echo "Tidak ada";
+                                                                } else {
+                                                                    echo $data->no;
+                                                                }
+
+                                                            endwhile;
+                                                        } else {
+                                                            echo "Tidak ada data pasien";
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.col-->
+                                            <div class="col-4">
+                                                <div class="c-callout c-callout-danger"><small class="text-muted">Jumlah Dokter</small>
+                                                    <div class="text-value-lg">
+                                                        <?php
+                                                        $result = $conn->query("SELECT COUNT(id_dokter) as no FROM dokter");
+                                                        if ($result->num_rows > 0) {
+                                                            while ($data = $result->fetch_object()) :
+                                                                echo $data->no;
+                                                            endwhile;
+                                                        } else {
+                                                            echo "Tidak ada data pasien";
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -74,17 +117,23 @@ endif;
                     </div>
                 </section>
             </div>
-
-            <footer>
-                <div class="footer clearfix mb-0 text-muted">
-                    <div class="float-start">
-                        <p>2021 &copy; BEM KM FTI UNAND</p>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
 
+    <?php
+    $p = @$_GET['page'];
+    if ($p == 'pendaftar') :
+        require_once 'daftar/index.php';
+    elseif ($p == 'poliklinik') :
+        include "poliklinik/index.php";
+    elseif ($p == 'dokter') :
+        include "dokter/index.php";
+    elseif ($p == 'tambahdokter') :
+        include "dokter/tambah.php";
+    elseif ($p == 'user') :
+        include "user/index.php";
+    endif;
+    ?>
     <script src="../../template/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="../../template/js/bootstrap.bundle.min.js"></script>
 

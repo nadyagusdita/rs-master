@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="../../template/css/bootstrap.css">
     <link rel="stylesheet" href="../../template/vendors/iconly/bold.css">
-    <link rel="stylesheet" href="../../template/vendors/simple-datatables/style.css">
 
     <link rel="stylesheet" href="../../template/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="../../template/vendors/bootstrap-icons/bootstrap-icons.css">
