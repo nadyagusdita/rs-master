@@ -1,10 +1,10 @@
 <?php
-// session_start();
-if (isset($_GET['no_antrian'])) :
+session_start();
+if (isset($_GET['id_poli'])) :
     include "../../../connect.php";
-    $no_antrian = $_GET['no_antrian'];
+    $id_poli = $_GET['id_poli'];
 
-    $result = $conn->query("DELETE FROM daftar WHERE no_antrian = '$no_antrian'");
+    $result = $conn->query("DELETE FROM poli WHERE id_poli = $id_poli");
 
     if ($conn->affected_rows > 0) {
         header('location: ../index.php');

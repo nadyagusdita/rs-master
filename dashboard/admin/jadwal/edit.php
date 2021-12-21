@@ -1,21 +1,29 @@
 <?php
 
+$id_jadwal = $_GET['id_jadwal'];
+$id_dokter = $_GET['id_dokter'];
+
+$rs = mysqli_query($conn, "SELECT * FROM jadwal_dokter 
+INNER JOIN dokter ON dokter.id_dokter = jadwal_dokter.id_dokter 
+INNER JOIN jadwal ON jadwal.id_jadwal = jadwal_dokter.id_jadwal
+WHERE jadwal_dokter.id_jadwal = $id_jadwal AND dokter.id_dokter = $id_dokter") or die(mysqli_error($conn));;
+$old = mysqli_fetch_assoc($rs);
+
+$old_jadwal = $old['id_jadwal'];
+$old_dokter = $old['id_dokter'];
+
 if (isset($_POST['submit'])) {
-    $res = mysqli_query($conn, "SELECT MAX(id_dokter) as max FROM dokter");
-    $data = mysqli_fetch_assoc($res);
-    $id_dokter = $data['max'] + 1;
+    $id_jadwal = $_POST['id_jadwal'];
+    $id_dokter = $_POST['id_dokter'];
 
-    $nama = $_POST['nama'];
-    $spesialis = $_POST['spesialis'];
-    $poli = $_POST['poli'];
+    $update = "UPDATE jadwal_dokter SET id_jadwal = $id_jadwal, id_dokter = $id_dokter
+    WHERE id_jadwal = $old_jadwal AND id_dokter = $old_dokter";
 
-    $insert = "INSERT INTO dokter (id_dokter, nama_dokter, spesialis, id_poli) VALUES ($id_dokter, '$nama', '$spesialis', '$poli')";
-
-    $exec = $conn->query($insert);
+    $exec = $conn->query($update);
     if ($conn->affected_rows > 0) {
-        header("location: ?page=dokter");
+        header("location: ?page=jadwal");
     } else {
-        header("location: ?page=dokter");
+        header("location: ?page=jadwal");
     }
 }
 ?>
@@ -55,15 +63,15 @@ if (isset($_POST['submit'])) {
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>Dokter</h3>
-                            <p class="text-subtitle text-muted">Tambah Dokter</p>
+                            <h3>Jadwal Dokter</h3>
+                            <p class="text-subtitle text-muted">Edit Jadwal Dokter</p>
                         </div>
 
                         <div class="col-12 col-md-6 order-md-2 order-first float-end">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dokter</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Jadwal Dokter</li>
                                 </ol>
                             </nav>
                         </div>
@@ -80,37 +88,34 @@ if (isset($_POST['submit'])) {
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group mb-3">
-                                            <label for="nama" class="mb-1">Nama Dokter</label>
-                                            <input class="form-control" type="text" id="nama" name="nama" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label for="spesialis" class="mb-1">Spesialis</label>
-                                            <select id="spesialis" name="spesialis" class="form-control">
-                                                <option value="" disabled selected> </option>
-                                                <option value="Anak">Anak</option>
-                                                <option value="Jantung">Jantung</option>
-                                                <option value="THT">THT</option>
-                                                <option value="Gigi & Mulut">Gigi & Mulut</option>
-                                                <option value="Syaraf">Syaraf</option>
-                                                <option value="Bedah Anak">Bedah Anak</option>
+                                            <label for="id_dokter" class="mb-1">Nama Dokter</label>
+                                            <select id="id_dokter" name="id_dokter" class="form-control">
+                                                <?php
+                                                $query = $conn->query("SELECT * FROM dokter");
+                                                while ($qtabel = $query->fetch_assoc()) {
+                                                    if ($qtabel['id_dokter'] == $old['id_dokter']) {
+                                                        echo '<option value="' . $qtabel['id_dokter'] . '" disabled selected>' . $qtabel['nama_dokter'] . '</option>';
+                                                    }
+                                                    echo '<option value="' . $qtabel['id_dokter'] . '">' . $qtabel['nama_dokter'] . '</option>';
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group mb-3">
-                                            <label for="poli" class="mb-1">Poli</label>
-                                            <select id="poli" name="poli" class="form-control">
-                                                <option value="null" disabled selected></option>
+                                            <label for="id_jadwal" class="mb-1">Jadwal Dokter</label>
+                                            <select id="id_jadwal" name="id_jadwal" class="form-control">
                                                 <?php
-                                                $result = $conn->query("SELECT * FROM poli");
+                                                $query = $conn->query("SELECT * FROM jadwal");
+                                                while ($qtabel = $query->fetch_assoc()) {
+                                                    if ($qtabel['id_jadwal'] == $old['id_jadwal']) {
+                                                        echo '<option value="' . $qtabel['id_jadwal'] . '" disabled selected>' . $qtabel['hari'] .
+                                                            '-' . $qtabel['jam_mulai'] . '-' . $qtabel['jam_selesai'] . '</option>';
+                                                    }
+                                                    echo '<option value="' . $qtabel['id_jadwal'] . '">' . $qtabel['hari'] . '-' . $qtabel['jam_mulai'] . '-' . $qtabel['jam_selesai'] . '</option>';
+                                                }
                                                 ?>
-                                                <?php
-                                                while ($row = $result->fetch_object()) : ?>
-                                                    <option value="<?= $row->id_poli; ?>"><?php echo $row->nama_poli; ?>
-                                                    </option>
-                                                <?php endwhile; ?>
                                             </select>
                                         </div>
                                     </div>

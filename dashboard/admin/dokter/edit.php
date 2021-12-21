@@ -1,17 +1,18 @@
 <?php
 
-if (isset($_POST['submit'])) {
-    $res = mysqli_query($conn, "SELECT MAX(id_dokter) as max FROM dokter");
-    $data = mysqli_fetch_assoc($res);
-    $id_dokter = $data['max'] + 1;
+$id = $_GET['id_dokter'];
 
+$rs = mysqli_query($conn, "SELECT * FROM dokter INNER JOIN poli ON dokter.id_poli = poli.id_poli WHERE id_dokter = $id");
+$old = mysqli_fetch_assoc($rs);
+
+if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $spesialis = $_POST['spesialis'];
     $poli = $_POST['poli'];
 
-    $insert = "INSERT INTO dokter (id_dokter, nama_dokter, spesialis, id_poli) VALUES ($id_dokter, '$nama', '$spesialis', '$poli')";
+    $update = "UPDATE dokter SET nama_dokter = '$nama', spesialis = '$spesialis', id_poli = $poli WHERE id_dokter = $id";
 
-    $exec = $conn->query($insert);
+    $exec = $conn->query($update);
     if ($conn->affected_rows > 0) {
         header("location: ?page=dokter");
     } else {
@@ -56,7 +57,7 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
                             <h3>Dokter</h3>
-                            <p class="text-subtitle text-muted">Tambah Dokter</p>
+                            <p class="text-subtitle text-muted">Edit Dokter</p>
                         </div>
 
                         <div class="col-12 col-md-6 order-md-2 order-first float-end">
@@ -81,14 +82,14 @@ if (isset($_POST['submit'])) {
                                     <div class="col-12">
                                         <div class="form-group mb-3">
                                             <label for="nama" class="mb-1">Nama Dokter</label>
-                                            <input class="form-control" type="text" id="nama" name="nama" required>
+                                            <input class="form-control" type="text" id="nama" name="nama" value="<?= $old['nama_dokter']; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group mb-3">
                                             <label for="spesialis" class="mb-1">Spesialis</label>
                                             <select id="spesialis" name="spesialis" class="form-control">
-                                                <option value="" disabled selected> </option>
+                                                <option value="<?= $old['spesialis']; ?>"><?= $old['spesialis']; ?></option>
                                                 <option value="Anak">Anak</option>
                                                 <option value="Jantung">Jantung</option>
                                                 <option value="THT">THT</option>
@@ -102,15 +103,15 @@ if (isset($_POST['submit'])) {
                                         <div class="form-group mb-3">
                                             <label for="poli" class="mb-1">Poli</label>
                                             <select id="poli" name="poli" class="form-control">
-                                                <option value="null" disabled selected></option>
                                                 <?php
-                                                $result = $conn->query("SELECT * FROM poli");
+                                                $query = $conn->query("SELECT * FROM poli");
+                                                while ($qtabel = $query->fetch_assoc()) {
+                                                    if ($qtabel['id_poli'] == $old['id_poli']) {
+                                                        echo '<option value="' . $qtabel['id_poli'] . '" disabled selected>' . $qtabel['nama_poli'] . '</option>';
+                                                    }
+                                                    echo '<option value="' . $qtabel['id_poli'] . '">' . $qtabel['nama_poli'] . '</option>';
+                                                }
                                                 ?>
-                                                <?php
-                                                while ($row = $result->fetch_object()) : ?>
-                                                    <option value="<?= $row->id_poli; ?>"><?php echo $row->nama_poli; ?>
-                                                    </option>
-                                                <?php endwhile; ?>
                                             </select>
                                         </div>
                                     </div>

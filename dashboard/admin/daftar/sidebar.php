@@ -49,7 +49,7 @@
 
                 <br>
                 <li class="sidebar-item">
-                    <a href="../index.php" class='sidebar-link'>
+                    <a href="/rs-master" class='sidebar-link'>
                         <i class="bi bi-box-arrow-left"></i>
                         <span>Ke Halaman Utama</span>
                     </a>

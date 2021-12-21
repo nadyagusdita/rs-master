@@ -1,21 +1,20 @@
 <?php
 
+$id = $_GET['id_poli'];
+
+$rs = mysqli_query($conn, "SELECT * FROM poli WHERE id_poli = $id");
+$old = mysqli_fetch_assoc($rs);
+
 if (isset($_POST['submit'])) {
-    $res = mysqli_query($conn, "SELECT MAX(id_dokter) as max FROM dokter");
-    $data = mysqli_fetch_assoc($res);
-    $id_dokter = $data['max'] + 1;
-
     $nama = $_POST['nama'];
-    $spesialis = $_POST['spesialis'];
-    $poli = $_POST['poli'];
 
-    $insert = "INSERT INTO dokter (id_dokter, nama_dokter, spesialis, id_poli) VALUES ($id_dokter, '$nama', '$spesialis', '$poli')";
+    $update = "UPDATE poli SET nama_poli = '$nama' WHERE id_poli = $id";
 
-    $exec = $conn->query($insert);
+    $exec = $conn->query($update);
     if ($conn->affected_rows > 0) {
-        header("location: ?page=dokter");
+        header("location: ?page=poli");
     } else {
-        header("location: ?page=dokter");
+        header("location: ?page=poli");
     }
 }
 ?>
@@ -55,15 +54,15 @@ if (isset($_POST['submit'])) {
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>Dokter</h3>
-                            <p class="text-subtitle text-muted">Tambah Dokter</p>
+                            <h3>Poliklinik</h3>
+                            <p class="text-subtitle text-muted">Edit Poliklinik</p>
                         </div>
 
                         <div class="col-12 col-md-6 order-md-2 order-first float-end">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dokter</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Poliklinik</li>
                                 </ol>
                             </nav>
                         </div>
@@ -80,38 +79,8 @@ if (isset($_POST['submit'])) {
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group mb-3">
-                                            <label for="nama" class="mb-1">Nama Dokter</label>
-                                            <input class="form-control" type="text" id="nama" name="nama" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label for="spesialis" class="mb-1">Spesialis</label>
-                                            <select id="spesialis" name="spesialis" class="form-control">
-                                                <option value="" disabled selected> </option>
-                                                <option value="Anak">Anak</option>
-                                                <option value="Jantung">Jantung</option>
-                                                <option value="THT">THT</option>
-                                                <option value="Gigi & Mulut">Gigi & Mulut</option>
-                                                <option value="Syaraf">Syaraf</option>
-                                                <option value="Bedah Anak">Bedah Anak</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label for="poli" class="mb-1">Poli</label>
-                                            <select id="poli" name="poli" class="form-control">
-                                                <option value="null" disabled selected></option>
-                                                <?php
-                                                $result = $conn->query("SELECT * FROM poli");
-                                                ?>
-                                                <?php
-                                                while ($row = $result->fetch_object()) : ?>
-                                                    <option value="<?= $row->id_poli; ?>"><?php echo $row->nama_poli; ?>
-                                                    </option>
-                                                <?php endwhile; ?>
-                                            </select>
+                                            <label for="nama" class="mb-1">Nama Poliklinik</label>
+                                            <input class="form-control" type="text" id="nama" name="nama" value="<?= $old['nama_poli']; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">

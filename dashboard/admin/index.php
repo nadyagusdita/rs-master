@@ -9,6 +9,8 @@
 
 include "../../connect.php";
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -120,20 +122,39 @@ include "../../connect.php";
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
     <?php
     $p = @$_GET['page'];
-    if ($p == 'pendaftar') :
-        require_once 'daftar/index.php';
-    elseif ($p == 'poliklinik') :
-        include "poliklinik/index.php";
-    elseif ($p == 'dokter') :
-        include "dokter/index.php";
-    elseif ($p == 'tambahdokter') :
-        include "dokter/tambah.php";
-    elseif ($p == 'user') :
-        include "user/index.php";
-    endif;
+if ($p == 'pendaftar') :
+    require_once 'daftar/index.php';
+
+elseif ($p == 'poliklinik') :
+    include "poliklinik/index.php";
+elseif ($p == 'tambahpoli') :
+    include "poliklinik/tambah.php";
+elseif ($p == 'editpoli') :
+    include "poliklinik/edit.php";
+
+elseif ($p == 'dokter') :
+    include "dokter/index.php";
+elseif ($p == 'tambahdokter') :
+    include "dokter/tambah.php";
+elseif ($p == 'editdokter') :
+    include "dokter/edit.php";
+
+elseif ($p == 'jadwal') :
+    include "jadwal/index.php";
+elseif ($p == 'tambahjadwal') :
+    include "jadwal/tambah.php";
+elseif ($p == 'editjadwal') :
+    include "jadwal/edit.php";
+
+elseif ($p == 'user') :
+    include "user/index.php";
+endif;
     ?>
+>>>>>>> bd7730133dec5493a53289ccd132062a015e12f6
     <script src="../../template/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="../../template/js/bootstrap.bundle.min.js"></script>
 

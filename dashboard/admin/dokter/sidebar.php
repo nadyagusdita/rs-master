@@ -2,7 +2,7 @@
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
-                <!-- <a href="index.html"><img src="../assets/Logo BEM (3).png" alt="Logo" style="width: 80px; height: 80px;"></a> -->
+                <!-- <a href="index.html"><img src="" alt="Logo" style="width: 80px; height: 80px;"></a> -->
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
@@ -49,7 +49,7 @@
 
                 <br>
                 <li class="sidebar-item">
-                    <a href="../index.php" class='sidebar-link'>
+                    <a href="/rs-master" class='sidebar-link'>
                         <i class="bi bi-box-arrow-left"></i>
                         <span>Ke Halaman Utama</span>
                     </a>

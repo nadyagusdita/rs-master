@@ -1,21 +1,16 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    $res = mysqli_query($conn, "SELECT MAX(id_dokter) as max FROM dokter");
-    $data = mysqli_fetch_assoc($res);
-    $id_dokter = $data['max'] + 1;
+    $id_jadwal = $_POST['id_jadwal'];
+    $id_dokter = $_POST['id_dokter'];
 
-    $nama = $_POST['nama'];
-    $spesialis = $_POST['spesialis'];
-    $poli = $_POST['poli'];
-
-    $insert = "INSERT INTO dokter (id_dokter, nama_dokter, spesialis, id_poli) VALUES ($id_dokter, '$nama', '$spesialis', '$poli')";
+    $insert = "INSERT INTO jadwal_dokter (id_jadwal, id_dokter) VALUES ($id_jadwal, $id_dokter)";
 
     $exec = $conn->query($insert);
     if ($conn->affected_rows > 0) {
-        header("location: ?page=dokter");
+        header("location: ?page=jadwal");
     } else {
-        header("location: ?page=dokter");
+        header("location: ?page=jadwal");
     }
 }
 ?>
@@ -55,15 +50,15 @@ if (isset($_POST['submit'])) {
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>Dokter</h3>
-                            <p class="text-subtitle text-muted">Tambah Dokter</p>
+                            <h3>Jadwal Dokter</h3>
+                            <p class="text-subtitle text-muted">Tambah Jadwal Dokter</p>
                         </div>
 
                         <div class="col-12 col-md-6 order-md-2 order-first float-end">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dokter</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Jadwal Dokter</li>
                                 </ol>
                             </nav>
                         </div>
@@ -80,35 +75,31 @@ if (isset($_POST['submit'])) {
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group mb-3">
-                                            <label for="nama" class="mb-1">Nama Dokter</label>
-                                            <input class="form-control" type="text" id="nama" name="nama" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label for="spesialis" class="mb-1">Spesialis</label>
-                                            <select id="spesialis" name="spesialis" class="form-control">
-                                                <option value="" disabled selected> </option>
-                                                <option value="Anak">Anak</option>
-                                                <option value="Jantung">Jantung</option>
-                                                <option value="THT">THT</option>
-                                                <option value="Gigi & Mulut">Gigi & Mulut</option>
-                                                <option value="Syaraf">Syaraf</option>
-                                                <option value="Bedah Anak">Bedah Anak</option>
+                                            <label for="id_dokter" class="mb-1">Nama Dokter</label>
+                                            <select id="id_dokter" name="id_dokter" class="form-control">
+                                                <option value="" disabled selected></option>
+                                                <?php
+                                                $result = $conn->query("SELECT * FROM dokter");
+                                                ?>
+                                                <?php
+                                                while ($row = $result->fetch_object()) : ?>
+                                                    <option value="<?= $row->id_dokter; ?>"><?php echo $row->nama_dokter; ?>
+                                                    </option>
+                                                <?php endwhile; ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group mb-3">
-                                            <label for="poli" class="mb-1">Poli</label>
-                                            <select id="poli" name="poli" class="form-control">
-                                                <option value="null" disabled selected></option>
+                                            <label for="id_jadwal" class="mb-1">Jadwal Dokter</label>
+                                            <select id="id_jadwal" name="id_jadwal" class="form-control">
+                                                <option value="" disabled selected></option>
                                                 <?php
-                                                $result = $conn->query("SELECT * FROM poli");
+                                                $result = $conn->query("SELECT * FROM jadwal");
                                                 ?>
                                                 <?php
                                                 while ($row = $result->fetch_object()) : ?>
-                                                    <option value="<?= $row->id_poli; ?>"><?php echo $row->nama_poli; ?>
+                                                    <option value="<?= $row->id_jadwal; ?>"><?= $row->hari; ?>, <?= $row->jam_mulai; ?>, <?= $row->jam_selesai; ?>
                                                     </option>
                                                 <?php endwhile; ?>
                                             </select>
